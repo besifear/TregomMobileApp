@@ -19,6 +19,8 @@ var Login = require ('./app/Login2');
 var Home = require ('./app/Home');
 var Question = require ('./app/Question');
 
+global.ipv4='172.16.99.195';
+
 export default class tregomshqip extends Component {
   render() {
     return (
