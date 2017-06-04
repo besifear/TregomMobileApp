@@ -31,7 +31,7 @@ class Home extends Component {
         }
 
         fetchQuestions(){
-            fetch('http://192.168.214.2/api/v1/questions')
+            fetch('http://172.16.99.196/api/v1/questions')
                 .then((response) => response.json())
                 .then((response) => {
                     this.setState({
@@ -54,7 +54,7 @@ class Home extends Component {
                                     <View style={styles.bodyQuestionHeaderTime}>
                                       <Icon name={'md-time'} size={20} color={'#2c3e50'}/>
                                       <Text style={styles.bodyQuestionheaderTitle}>
-                                        {question.created_at}
+                                        {question.diff_for_humans}
                                       </Text>
                                     </View>
                                   </View>
