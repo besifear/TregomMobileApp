@@ -10,6 +10,7 @@ import {
   ScrollView,
   Picker,
   Item,
+  Image,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -43,20 +44,22 @@ class Home extends Component {
             renderRow(question, sectionId, rowId, highlightRow){
                 return (
                     <View style={styles.bodyQuestion}>
-                                  <View style={styles.bodyQuestionHeader}>
-                                    <Icon name={'ios-contact'} size={50} color={'#2c3e50'}  />
-                                    <Text style={styles.bodyQuestionHeaderUser}>
-                                      {question.user.username}
-                                    </Text>
+                                <View style={styles.bodyQuestionFirstRow}>
                                     <Text maxLength={10} style={styles.bodyQuestionHeaderCategory}>
                                       {question.category.name}
                                     </Text>
                                     <View style={styles.bodyQuestionHeaderTime}>
-                                      <Icon name={'md-time'} size={20} color={'#2c3e50'}/>
                                       <Text style={styles.bodyQuestionheaderTitle}>
                                         {question.diff_for_humans}
                                       </Text>
+                                      <Icon name={'md-time'} size={15} color={'#2c3e50'}/>
                                     </View>
+                                </View>
+                                  <View style={styles.bodyQuestionHeader}>
+                                    <Icon name={'ios-contact'} size={20} color={'#2c3e50'}  />
+                                    <Text style={styles.bodyQuestionHeaderUser}>
+                                      {question.user.username}
+                                    </Text>
                                   </View>
                                   <View style={styles.bodyQuestionContent}>
                                   <TouchableHighlight  onPress={()=>this.onButtonPressQuestion(question.id)} >
@@ -99,6 +102,12 @@ class Home extends Component {
      id: 'Login'
    });
  }
+ onButtonPressIndex(){
+   global.user=null;
+   this.props.navigator.push({
+     id: 'Home'
+   });
+ }
 
  onButtonPressQuestion(questionId){
    console.log(questionId);
@@ -118,9 +127,7 @@ class Home extends Component {
 
         <View style={styles.header}>
           <Icon style={styles.headerIcons} name={'md-search'} size={30} color={'white'}  />
-          <Text style={styles.headerTitle}>
-            KOLEGU
-          </Text>
+          <Image style={styles.logo} source={require('../public/img/moblogo.png')}/>
           <Icon style={styles.headerIcons} name={'md-list'} size={30} color={'white'}/>
         </View >
         <View style={styles.body}>
@@ -131,13 +138,15 @@ class Home extends Component {
           />
         </View>
 
-        <View style={styles.footer}>
-          <Icon name={'ios-list-box-outline'} size={40} color={'#2c3e50'}  />
-          <Icon name={'ios-chatboxes-outline'} size={40} color={'#2c3e50'}  />
-          <Icon name={'ios-add-circle'} size={50} color={'#f39c12'}/>
-          <Icon name={'ios-notifications-outline'} size={40} color={'#2c3e50'}/>
+        <View elevation={10} style={styles.footer}>
+          <TouchableHighlight onPress={this.onButtonPressIndex.bind(this)} >
+            <Icon name={'ios-list-box-outline'} size={30} color={'#2c3e50'}  />
+          </TouchableHighlight>
+          <Icon name={'ios-chatboxes-outline'} size={30} color={'#2c3e50'}  />
+          <Icon name={'ios-add-circle'} size={40} color={'#f39c12'}/>
+          <Icon name={'ios-notifications-outline'} size={30} color={'#2c3e50'}/>
           <TouchableHighlight  onPress={this.onButtonPress.bind(this)} >
-          <Icon name={'ios-person-outline'} size={40} color={'#2c3e50'}/>
+          <Icon name={'ios-person-outline'} size={30} color={'#2c3e50'}/>
           </TouchableHighlight>
         </View>
       </View>
@@ -162,9 +171,8 @@ const styles = StyleSheet.create({
   headerIcons: {
       padding: 15,
   },
-  headerTitle: {
-    fontSize: 20,
-    color: 'white',
+  logo: {
+
   },
   body: {
     flex: 10,
@@ -179,53 +187,58 @@ const styles = StyleSheet.create({
     backgroundColor: '#FEFEFE',
     marginTop:10,
   },
+  bodyQuestionFirstRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 15,
+  },
   bodyQuestionHeader: {
     flex:1,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
     alignItems: 'center',
+    paddingLeft: 15,
   },
   bodyQuestionHeaderUser: {
-    fontSize: 17,
+    fontSize: 15,
     color: '#2c3e50',
     fontWeight: 'bold',
     fontFamily: 'Arial',
+    paddingLeft: 5,
   },
   bodyQuestionHeaderTime: {
-    marginTop: 5,
-    flexDirection: 'column',
-    justifyContent: 'space-around',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    width:50,
   },
   bodyQuestionheaderTitle: {
     fontSize: 13,
+    paddingRight: 5,
   },
   bodyQuestionContent: {
-    flex:2,
+    flex:3,
     flexDirection: 'column',
-    marginTop:15,
   },
   bodyQuestionContentTitle: {
     fontSize: 20,
     color: '#2c3e50',
     fontWeight: 'bold',
     fontFamily: 'Arial',
-    marginLeft:10,
-
+    marginHorizontal: 15,
   },
   bodyQuestionContentContent: {
     marginTop: 10,
     fontSize: 15,
     color: '#2c3e50',
     fontFamily: 'Arial',
-    marginLeft:10,
+    marginHorizontal: 15,
   },
   bodyQuestionFooter: {
     flex:1,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    paddingHorizontal: 15,
   },
   bodyQuestionFooterUpvote: {
     flexDirection: 'row',
