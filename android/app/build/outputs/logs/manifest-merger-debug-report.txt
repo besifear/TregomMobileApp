@@ -1,0 +1,96 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:1:1-32:12
+	package
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:2:5-30
+		INJECTED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:4:5-30
+		INJECTED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:3:5-28
+		INJECTED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:6:5-67
+	android:name
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:7:5-77
+MERGED from [com.facebook.react:react-native:0.42.3] C:\Users\Besniku\.android\build-cache\61f778955a69c1cecfe09961093997ecb127d1e6\output\AndroidManifest.xml:11:5-78
+	android:name
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:7:22-75
+uses-sdk
+ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:9:5-11:41
+MERGED from [tregomshqip:react-native-vector-icons:unspecified] C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\node_modules\react-native-vector-icons\android\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.42.3] C:\Users\Besniku\.android\build-cache\61f778955a69c1cecfe09961093997ecb127d1e6\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Besniku\.android\build-cache\8c0adfa60df801d745b4ef6016206f79cbaeac04\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\Besniku\.android\build-cache\afa990976d4dfc8cfe0967a4abf58fea535e21d8\output\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\Besniku\.android\build-cache\b4d6c739bfa0a36b816406b6571c4cb772d0501d\output\AndroidManifest.xml:14:5-16:41
+MERGED from [com.facebook.fresco:fresco:0.11.0] C:\Users\Besniku\.android\build-cache\8806ccb6466f9c126982ab2465c7d6a9804149cd\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:0.11.0] C:\Users\Besniku\.android\build-cache\c1e66163a17fac136c56862e6b52a214c9614a67\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:0.11.0] C:\Users\Besniku\.android\build-cache\3d92d90a81ee44cb8feb84ad1be8c8e212c9d38f\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:0.11.0] C:\Users\Besniku\.android\build-cache\0f3ac00de5c86d4626c40a520cb60cb1e6c15ee4\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:0.11.0] C:\Users\Besniku\.android\build-cache\d72b51a7f554ba38910bde390b78703380262312\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Besniku\.android\build-cache\deb59fa606456fc9260e6431a0a5239ab9ae7d47\output\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.11.0] C:\Users\Besniku\.android\build-cache\beade407aab88354d12540ec12d9614bb8a762a0\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Besniku\.android\build-cache\a3faffe923ff585a404bd0119d076df180c39a7d\output\AndroidManifest.xml:2:3-70
+	android:targetSdkVersion
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:11:9-38
+		INJECTED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:10:9-35
+		INJECTED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml
+application
+ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:13:5-30:19
+MERGED from [com.facebook.react:react-native:0.42.3] C:\Users\Besniku\.android\build-cache\61f778955a69c1cecfe09961093997ecb127d1e6\output\AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Besniku\.android\build-cache\8c0adfa60df801d745b4ef6016206f79cbaeac04\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Besniku\.android\build-cache\deb59fa606456fc9260e6431a0a5239ab9ae7d47\output\AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Besniku\.android\build-cache\a3faffe923ff585a404bd0119d076df180c39a7d\output\AndroidManifest.xml:3:3-17
+MERGED from [org.webkit:android-jsc:r174650] C:\Users\Besniku\.android\build-cache\3b56930224949fdf1257d84cea4d72bec5833e29\output\AndroidManifest.xml:2:3-17
+	android:label
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:16:7-39
+	android:allowBackup
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:15:7-33
+	android:icon
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:17:7-41
+	android:theme
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:18:7-38
+	android:name
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:14:7-38
+activity#com.tregomshqip.MainActivity
+ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:19:7-28:18
+	android:label
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:21:9-41
+	android:windowSoftInputMode
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:23:9-51
+	android:configChanges
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:22:9-79
+	android:name
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:20:9-37
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:24:9-27:25
+action#android.intent.action.MAIN
+ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:25:13-65
+	android:name
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:25:21-62
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:26:13-73
+	android:name
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:26:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:29:7-84
+	android:name
+		ADDED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:29:17-81
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+uses-permission#android.permission.READ_PHONE_STATE
+IMPLIED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\src\main\AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE

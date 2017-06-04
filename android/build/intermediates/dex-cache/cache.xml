@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.android\build-cache\deb59fa606456fc9260e6431a0a5239ab9ae7d47\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\classes_27506ae7147a1b0d0cacf56a905356a601634ecd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\library-2.4.0_f6017a95c8ad11993b7c829b25a8fc8b312b9f7c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\node_modules\react-native-vector-icons\android\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b319ff9834bbeb9be394687614eb86892699ea14">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\classes_b412cf9d491e8909535ddf70d0ba1224ab6fe645.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.android\build-cache\61f778955a69c1cecfe09961093997ecb127d1e6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="962b06c207e808c0557ffd6163ac584025a96021">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\classes_6edf229df53847d7c9474c349f91d61b73b91bc2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_3c4aa0ccca95e3ece921dc5e9c2d9c3436cf91a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.android\build-cache\d72b51a7f554ba38910bde390b78703380262312\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ca63c521b5745ae9a09629d7ca67ff6bc2a967fe">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\classes_10f80b184443ae97395bdaede2900efcba37393f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.android\build-cache\beade407aab88354d12540ec12d9614bb8a762a0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="98786c1770b531b9194fb6448b2a2692c64074b6">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\classes_45843665b22b75bce377c99e10aaf169589ffb0a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.android\build-cache\deb59fa606456fc9260e6431a0a5239ab9ae7d47\output\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_f59ee228b3e5ae866ce2af1684f4763c2786a1e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.android\build-cache\afa990976d4dfc8cfe0967a4abf58fea535e21d8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\classes_b040b126ed1bcce6cb8b23d4944ecc9e21a71a13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.android\build-cache\c1e66163a17fac136c56862e6b52a214c9614a67\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1137942adeb03984c1311b662363dd38fc238fd3">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\classes_03be6e9deda054e4991305369bdf964620a87ab9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.android\build-cache\3d92d90a81ee44cb8feb84ad1be8c8e212c9d38f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2b8a01ad9da5d26d0067894c22e87597bca2c500">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\classes_b32d0bb481c54f0c6438e42914ddb1da3a359c9f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.android\build-cache\8806ccb6466f9c126982ab2465c7d6a9804149cd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d31aadf33187c37a7cd63dc1b769f8c6e33f78c3">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\classes_9ce9acfc7a782ec594b9b630df93ace702f1f339.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.android\build-cache\61f778955a69c1cecfe09961093997ecb127d1e6\output\jars\libs\infer-annotations-1.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="dcac634e137395f79693ec760f081a86eb2bd84e">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\infer-annotations-1.5_16fd7e415e65c76e9589176e6d54a56e3b19dce1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Besniku\.android\build-cache\0f3ac00de5c86d4626c40a520cb60cb1e6c15ee4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3341b66c54367e777a0647e2db96c045329bfeab">
+        <dex dex="C:\Users\Besniku\Desktop\Projektet\TregomMobileApp\android\app\build\intermediates\pre-dexed\debug\classes_3a4dcb880252db396dfcb1635120d2beaeeb525c.jar" />
+    </item>
+
+</items>
