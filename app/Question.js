@@ -120,7 +120,12 @@ class Question extends Component {
      id: 'Login'
    });
  }
-
+ onButtonPressIndex(){
+   global.user=null;
+   this.props.navigator.push({
+     id: 'Home'
+   });
+ }
 
 testEEE(){
   console.log(this.state.questionDataSource.all_answers_with_user);
@@ -143,43 +148,49 @@ storeAnswer(){
           <Icon name={'md-list'} size={40} color={'white'}/>
         </View >
         <View style={styles.body}>
-          <ListView   //Question
-          style={styles.bodyScroll}
-          dataSource={this.state.questionDataSource}
-          renderRow={this.renderRow.bind(this)}
-          />
 
-          <ListView   //Answers
-          style={styles.bodyScroll}
-          dataSource={this.state.answerDataSource}
-          renderRow={this.renderRowAnswer.bind(this)}
-          />
-
-
-          <View style={styles.bodyQuestion}>
-            <View style={styles.bodyQuestionContent}>
-              <Text style={styles.bodyQuestionHeaderUser}>
-                Pergjigju:
-              </Text>
-              <TextInput
-                multiline = {true}
-                numberOfLines = {4}
-                onChangeText={(text) => this.setState({myAnswer: text})}
-                value={this.state.text}
-                maxLength = {40}
-              />
-              <TouchableHighlight onPress={ this.storeAnswer.bind(this)}>
-                <Text> Ruaje </Text>
-              </TouchableHighlight>
-            </View>
+          <View style={styles.bodyQuestionScroll}>
+            <ListView   //Question
+            style={styles.bodyQuestionScroll}
+            dataSource={this.state.questionDataSource}
+            renderRow={this.renderRow.bind(this)}
+            />
           </View>
 
+          <View style={styles.answersLabel}>
+            <Text style={styles.bodyQuestionHeaderUser}>
+              Pergjigjjet:
+            </Text>
+          </View>
 
+          <View style={styles.bodyAnswerScroll}>
+            <ListView   //Answers
+            style={styles.bodyAnswerScroll}
+            dataSource={this.state.answerDataSource}
+            renderRow={this.renderRowAnswer.bind(this)}
+            />
+          </View>
 
+          <View style={styles.bodyAnswerForm}>
+            <View style={styles.bodyQuestionContent}>
+            <TextInput
+              multiline = {true}
+              onChangeText={(text) => this.setState({myAnswer: text})}
+              value={this.state.text}
+              maxLength = {40}
+              placeholder="Përgjegjja juaj..."
+            />
+            <TouchableHighlight onPress={ this.storeAnswer.bind(this)} style={styles.buttonContainer}>
+              <Text style={styles.buttonText}> Ruaje Përgjegjjen </Text>
+            </TouchableHighlight>
+            </View>
+          </View>
         </View>
 
         <View style={styles.footer}>
-          <Icon name={'ios-list-box-outline'} size={40} color={'#2c3e50'}  />
+          <TouchableHighlight  onPress={this.onButtonPressIndex.bind(this)} >
+            <Icon name={'ios-list-box-outline'} size={40} color={'#2c3e50'}  />
+          </TouchableHighlight>
           <Icon name={'ios-chatboxes-outline'} size={40} color={'#2c3e50'}  />
           <Icon name={'ios-add-circle'} size={50} color={'#f39c12'}/>
           <Icon name={'ios-notifications-outline'} size={40} color={'#2c3e50'}/>
@@ -214,14 +225,30 @@ const styles = StyleSheet.create({
     flex: 7,
     backgroundColor: '#ecf0f1',
   },
-  bodyScroll: {
+  bodyQuestionScroll: {
+    flex:6,
+  },
+  answersLabel: {
     flex:1,
   },
+  bodyAnswerScroll: {
+    flex:8,
+    marginLeft:3,
+    marginRight:3,
+  },
   bodyQuestion: {
-    height: 200,
+    flex:1,
     alignSelf: 'stretch',
     backgroundColor: '#FEFEFE',
     marginTop:10,
+  },
+  bodyAnswerForm: {
+    flex:3,
+    alignSelf: 'stretch',
+    backgroundColor: '#FEFEFE',
+    marginTop:2,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
   },
   bodyQuestionHeader: {
     flex:1,
@@ -294,6 +321,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color:'#2c3e50',
   },
+  buttonContainer: {
+		backgroundColor: '#f39c12',
+	},
+	buttonText: {
+		color: '#fff',
+		textAlign: 'center',
+    fontSize: 15,
+	},
   footer: {
     flex: 1,
     flexDirection: 'row',

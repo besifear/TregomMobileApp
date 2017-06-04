@@ -99,6 +99,12 @@ class Home extends Component {
      id: 'Login'
    });
  }
+ onButtonPressIndex(){
+   global.user=null;
+   this.props.navigator.push({
+     id: 'Home'
+   });
+ }
 
  onButtonPressQuestion(questionId){
    console.log(questionId);
@@ -132,7 +138,9 @@ class Home extends Component {
         </View>
 
         <View style={styles.footer}>
-          <Icon name={'ios-list-box-outline'} size={40} color={'#2c3e50'}  />
+          <TouchableHighlight  onPress={this.onButtonPressIndex.bind(this)} >
+            <Icon name={'ios-list-box-outline'} size={40} color={'#2c3e50'}  />
+          </TouchableHighlight>
           <Icon name={'ios-chatboxes-outline'} size={40} color={'#2c3e50'}  />
           <Icon name={'ios-add-circle'} size={50} color={'#f39c12'}/>
           <Icon name={'ios-notifications-outline'} size={40} color={'#2c3e50'}/>

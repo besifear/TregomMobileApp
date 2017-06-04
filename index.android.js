@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-var Login = require ('./app/Login2');
+var Login = require ('./app/Login');
 var Home = require ('./app/Home');
 var Question = require ('./app/Question');
 
