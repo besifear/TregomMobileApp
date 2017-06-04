@@ -143,7 +143,7 @@ storeValueInAsyncStorage(key, value){
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#CCCCCC'
+		backgroundColor: '#fff'
 	},
   tregom: {
     fontSize: 45,
@@ -157,8 +157,6 @@ const styles = StyleSheet.create({
 		flexGrow: 1
 	},
 	logo: {
-		height: 80,
-		width: 378
 	},
   formContainerView: {
     padding:20,

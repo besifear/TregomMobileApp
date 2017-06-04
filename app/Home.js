@@ -31,7 +31,7 @@ class Home extends Component {
         }
 
         fetchQuestions(){
-            fetch('http://'+global.ipv4+'/api/v1/questions')
+            fetch('http://172.16.102.17/api/v1/questions')
                 .then((response) => response.json())
                 .then((response) => {
                     this.setState({
@@ -117,11 +117,11 @@ class Home extends Component {
       <View style={styles.container}>
 
         <View style={styles.header}>
-          <Icon name={'md-search'} size={40} color={'white'}  />
+          <Icon style={styles.headerIcons} name={'md-search'} size={30} color={'white'}  />
           <Text style={styles.headerTitle}>
             KOLEGU
           </Text>
-          <Icon name={'md-list'} size={40} color={'white'}/>
+          <Icon style={styles.headerIcons} name={'md-list'} size={30} color={'white'}/>
         </View >
         <View style={styles.body}>
           <ListView   //ex ScrollView
@@ -137,7 +137,7 @@ class Home extends Component {
           <Icon name={'ios-add-circle'} size={50} color={'#f39c12'}/>
           <Icon name={'ios-notifications-outline'} size={40} color={'#2c3e50'}/>
           <TouchableHighlight  onPress={this.onButtonPress.bind(this)} >
-            <Icon name={'ios-person-outline'} size={40} color={'#2c3e50'}/>
+          <Icon name={'ios-person-outline'} size={40} color={'#2c3e50'}/>
           </TouchableHighlight>
         </View>
       </View>
@@ -155,16 +155,19 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#f39c12',
+  },
+  headerIcons: {
+      padding: 15,
   },
   headerTitle: {
     fontSize: 20,
     color: 'white',
   },
   body: {
-    flex: 7,
+    flex: 10,
     backgroundColor: '#ecf0f1',
   },
   bodyScroll: {
