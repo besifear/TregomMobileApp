@@ -35,9 +35,10 @@ class Question extends Component {
         }
 
         fetchQuestions(){
-            fetch('http://172.16.99.196/api/v1/questions/'+global.questionId)
+            fetch('http://'+global.ipv4+'/api/v1/questions/'+global.questionId)
                 .then((response) => response.json())
                 .then((response) => {
+                    console.log(response);
                     this.setState({
                         questionDataSource: this.state.questionDataSource.cloneWithRows([response[0]])
                     });

@@ -31,7 +31,7 @@ class Home extends Component {
         }
 
         fetchQuestions(){
-            fetch('http://172.16.99.196/api/v1/questions')
+            fetch('http://'+global.ipv4+'/api/v1/questions')
                 .then((response) => response.json())
                 .then((response) => {
                     this.setState({

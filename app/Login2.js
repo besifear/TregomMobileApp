@@ -30,7 +30,7 @@ class Login2 extends Component {
   }
 
   authenticate(){
-        fetch('http://172.16.99.196/api/v1/authenticate',{
+        fetch('http://'+global.ipv4+'/api/v1/authenticate',{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -52,7 +52,7 @@ class Login2 extends Component {
 
     fetchUserInfo( authToken ){
         var passingTokenStructure = 'Bearer '+ authToken;
-        fetch('http://172.16.99.196/api/v1/getuser',{
+        fetch('http://'+global.ipv4+'/api/v1/getuser',{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
