@@ -20,8 +20,8 @@ class Login2 extends Component {
     super();
 
     this.state = {
-      username: "",
-      password: "",
+      username: "Ardit",
+      password: "123456",
       error: "",
       authenticationToken: "",
       isLoggedIn: false,

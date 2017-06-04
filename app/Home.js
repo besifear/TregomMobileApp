@@ -105,6 +105,12 @@ class Home extends Component {
      id: 'Home'
    });
  }
+ onButtonPressQuestionForm(){
+   global.user=null;
+   this.props.navigator.push({
+     id: 'QuestionForm'
+   });
+ }
 
  onButtonPressQuestion(questionId){
    console.log(questionId);
@@ -142,7 +148,9 @@ class Home extends Component {
             <Icon name={'ios-list-box-outline'} size={40} color={'#2c3e50'}  />
           </TouchableHighlight>
           <Icon name={'ios-chatboxes-outline'} size={40} color={'#2c3e50'}  />
-          <Icon name={'ios-add-circle'} size={50} color={'#f39c12'}/>
+          <TouchableHighlight  onPress={this.onButtonPressQuestionForm.bind(this)} >
+            <Icon name={'ios-add-circle'} size={50} color={'#f39c12'}/>
+          </TouchableHighlight>
           <Icon name={'ios-notifications-outline'} size={40} color={'#2c3e50'}/>
           <TouchableHighlight  onPress={this.onButtonPress.bind(this)} >
             <Icon name={'ios-person-outline'} size={40} color={'#2c3e50'}/>
