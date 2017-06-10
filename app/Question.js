@@ -32,6 +32,7 @@ class Question extends Component {
         componentDidMount(){
 
             this.fetchQuestions();
+            console.log(global.user);
         }
 
         fetchQuestions(){
@@ -149,7 +150,7 @@ storeAnswer(){
         <View style={styles.header}>
           <Icon name={'md-search'} size={40} color={'white'}  />
           <Text style={styles.headerTitle}>
-            KOLEGU
+            TREGOM
           </Text>
           <Icon name={'md-list'} size={40} color={'white'}/>
         </View >

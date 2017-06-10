@@ -131,7 +131,7 @@ class Home extends Component {
         <View style={styles.header}>
           <Icon name={'md-search'} size={40} color={'white'}  />
           <Text style={styles.headerTitle}>
-            KOLEGU
+            TREGOM
           </Text>
           <Icon name={'md-list'} size={40} color={'white'}/>
         </View >

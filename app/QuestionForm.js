@@ -15,18 +15,77 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 
 var start = Date.now();
+var PickerItem = Picker.Item;
 
 class QuestionForm extends Component {
 
   constructor(){
     super();
-
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.state = {
       title: "",
       content: "",
       category: "",
       error: "",
+      categoryDataSource: [],
+      user: null,
     }
+  }
+
+  componentDidMount(){
+      this.fetchCategories();
+      console.log(global.user);
+  }
+
+  fetchCategories(){
+    this.getValueFromAsyncStorage('@TregomAuthenticate:user', user);
+      console.log(this.state.user);
+      fetch('http://'+global.ipv4+'/api/v1/categories')
+          .then((response) => response.json())
+          .then((response) => {
+              this.setState({
+                  categoryDataSource: response
+              });
+              console.log(response);
+          }).catch((error)=>{console.log(error)});
+
+  }
+
+  getValueFromAsyncStorage(key, variable){
+      try{
+          AsyncStorage.getItem(key)
+              .then( (value) => { this.setState({variable: value}) });
+
+      }catch ( error ){
+          console.log ( error );
+      }
+  }
+
+  postQuestion(){
+    var passingTokenStructure = 'Bearer '+ global.authToken;
+        fetch('http://'+global.ipv4+'/api/v1/questions',{
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': passingTokenStructure,
+            },
+            body: JSON.stringify({
+                title: this.state.title,
+                content: this.state.content,
+                category: this.state.content,
+                user_id : global.user.id
+            })
+        })
+        .then((response) => response.json())
+        .then((response) => {
+        }).catch((error)=>{console.log(error)});
+    }
+
+  renderRow(category, sectionId, rowId, highlightRow){
+      return (
+        <Picker.Item label={category.name} value={category.id} />
+      );
   }
 
  onButtonPress(){
@@ -49,14 +108,18 @@ class QuestionForm extends Component {
  }
 
 
+
   render() {
+    let serviceItems = this.state.categoryDataSource.map( (s, i) => {
+            return <Picker.Item key={i} value={s.id} label={s.name} />
+        });
     return (
       <View style={styles.container}>
 
         <View style={styles.header}>
           <Icon name={'md-search'} size={40} color={'white'}  />
           <Text style={styles.headerTitle}>
-            KOLEGU
+            TREGOM
           </Text>
           <Icon name={'md-list'} size={40} color={'white'}/>
         </View >
@@ -76,13 +139,12 @@ class QuestionForm extends Component {
                 <Text style={styles.labels}>
                   Kategoria:
                 </Text>
-                <Picker onValueChange={(cat) => this.setState({category: cat})}>
-                  <Picker.Item label="Java" value="java" />
-                  <Picker.Item label="Matematike" value="mat" />
-                  <Picker.Item label="Fizike" value="fiz" />
-                  <Picker.Item label="Biologji" value="bio" />
+                <Picker
+                  selectedValue={this.state.category}
+                 onValueChange={(cat) => this.setState({category: cat})}>
+                  {serviceItems}
                 </Picker>
-                <TouchableHighlight style={styles.buttonContainer}>
+                <TouchableHighlight onPress={this.postQuestion.bind(this)} style={styles.buttonContainer}>
                   <Text style={styles.buttonText}>Shtro Pyetjen</Text>
                 </TouchableHighlight>
               </View>
