@@ -20,7 +20,10 @@ var Home = require ('./app/Home');
 var Question = require ('./app/Question');
 var QuestionForm = require ('./app/QuestionForm');
 
-global.ipv4='172.16.148.16';
+global.ipv4='172.16.151.151';
+global.user= null;
+global.authToken = null;
+global.questionId = null;
 
 export default class tregomshqip extends Component {
   render() {

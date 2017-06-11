@@ -100,21 +100,17 @@ class Home extends Component {
    });
  }
  onButtonPressIndex(){
-   global.user=null;
    this.props.navigator.push({
      id: 'Home'
    });
  }
  onButtonPressQuestionForm(){
-   global.user=null;
    this.props.navigator.push({
      id: 'QuestionForm'
    });
  }
 
  onButtonPressQuestion(questionId){
-   console.log(questionId);
-   global.user=null;
    global.questionId=questionId;
    this.props.navigator.push({
      id: 'Question'

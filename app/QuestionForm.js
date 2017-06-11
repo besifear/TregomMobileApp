@@ -28,7 +28,6 @@ class QuestionForm extends Component {
       category: "",
       error: "",
       categoryDataSource: [],
-      user: null,
     }
   }
 
@@ -38,27 +37,15 @@ class QuestionForm extends Component {
   }
 
   fetchCategories(){
-    this.getValueFromAsyncStorage('@TregomAuthenticate:user', user);
-      console.log(this.state.user);
       fetch('http://'+global.ipv4+'/api/v1/categories')
           .then((response) => response.json())
           .then((response) => {
               this.setState({
+                  category: response[0].id,
                   categoryDataSource: response
               });
-              console.log(response);
           }).catch((error)=>{console.log(error)});
 
-  }
-
-  getValueFromAsyncStorage(key, variable){
-      try{
-          AsyncStorage.getItem(key)
-              .then( (value) => { this.setState({variable: value}) });
-
-      }catch ( error ){
-          console.log ( error );
-      }
   }
 
   postQuestion(){
@@ -73,12 +60,23 @@ class QuestionForm extends Component {
             body: JSON.stringify({
                 title: this.state.title,
                 content: this.state.content,
-                category: this.state.content,
-                user_id : global.user.id
+                category_id: this.state.category,
+                id : global.user.id
             })
         })
         .then((response) => response.json())
         .then((response) => {
+            console.log('passingTokenStructure = ');
+            console.log(passingTokenStructure);
+            console.log('title = ');
+            console.log(this.state.title);
+            console.log('content = ');
+            console.log(this.state.content);
+            console.log('category = ');
+            console.log(this.state.category);
+            console.log('user = ');
+            console.log(global.user.id);
+            console.log(response);
         }).catch((error)=>{console.log(error)});
     }
 
@@ -95,13 +93,11 @@ class QuestionForm extends Component {
    });
  }
  onButtonPressIndex(){
-   global.user=null;
    this.props.navigator.push({
      id: 'Home'
    });
  }
  onButtonPressQuestionForm(){
-   global.user=null;
    this.props.navigator.push({
      id: 'QuestionForm'
    });
@@ -141,7 +137,7 @@ class QuestionForm extends Component {
                 </Text>
                 <Picker
                   selectedValue={this.state.category}
-                 onValueChange={(cat) => this.setState({category: cat})}>
+                 onValueChange={(value) => this.setState({category: value})}>
                   {serviceItems}
                 </Picker>
                 <TouchableHighlight onPress={this.postQuestion.bind(this)} style={styles.buttonContainer}>

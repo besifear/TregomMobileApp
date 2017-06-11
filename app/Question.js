@@ -32,14 +32,18 @@ class Question extends Component {
         componentDidMount(){
 
             this.fetchQuestions();
+            console.log('global.user = ');
             console.log(global.user);
+            console.log('authToken = ');
+            console.log(global.authToken);
+            console.log('questionId = ');
+            console.log(global.questionId);
         }
 
         fetchQuestions(){
             fetch('http://'+global.ipv4+'/api/v1/questions/'+global.questionId)
                 .then((response) => response.json())
                 .then((response) => {
-                    console.log(response);
                     this.setState({
                         questionDataSource: this.state.questionDataSource.cloneWithRows([response[0]])
                     });
@@ -140,6 +144,8 @@ testEEE(){
 
 storeAnswer(){
   console.log('stored answer!');
+  console.log(global.user);
+  console.log(global.authToken);
 }
 
 
