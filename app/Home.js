@@ -32,7 +32,7 @@ class Home extends Component {
         }
 
         fetchQuestions(){
-            fetch('http://172.16.102.17/api/v1/questions')
+            fetch('http://'+global.ipv4+'/api/v1/questions')
                 .then((response) => response.json())
                 .then((response) => {
                     this.setState({
@@ -49,14 +49,14 @@ class Home extends Component {
                                       {question.category.name}
                                     </Text>
                                     <View style={styles.bodyQuestionHeaderTime}>
-                                      <Text style={styles.bodyQuestionheaderTitle}>
+                                      <Text style={styles.bodyQuestionHeaderTimeText}>
                                         {question.diff_for_humans}
                                       </Text>
-                                      <Icon name={'md-time'} size={15} color={'#2c3e50'}/>
+                                      <Icon name={'md-time'} size={12} color={'#2c3e50'}/>
                                     </View>
                                 </View>
                                   <View style={styles.bodyQuestionHeader}>
-                                    <Icon name={'ios-contact'} size={20} color={'#2c3e50'}  />
+                                    <Icon name={'ios-contact'} size={17} color={'#2c3e50'}  />
                                     <Text style={styles.bodyQuestionHeaderUser}>
                                       {question.user.username}
                                     </Text>
@@ -108,6 +108,12 @@ class Home extends Component {
      id: 'Home'
    });
  }
+ onButtonPressQuestionForm(){
+   global.user=null;
+   this.props.navigator.push({
+     id: 'QuestionForm'
+   });
+ }
 
  onButtonPressQuestion(questionId){
    console.log(questionId);
@@ -118,6 +124,13 @@ class Home extends Component {
    });
  }
 
+ onButtonPressProfile() {
+     console.log('hello hi');
+     global.user=null;
+     this.props.navigator.push({
+       id: 'Profile'
+     });
+ }
 
 
 
@@ -129,7 +142,7 @@ class Home extends Component {
           <Icon style={styles.headerIcons} name={'md-search'} size={30} color={'white'}  />
           <Image style={styles.logo} source={require('../public/img/moblogo.png')}/>
           <Icon style={styles.headerIcons} name={'md-list'} size={30} color={'white'}/>
-        </View >
+        </View>
         <View style={styles.body}>
           <ListView   //ex ScrollView
           style={styles.bodyScroll}
@@ -143,10 +156,14 @@ class Home extends Component {
             <Icon name={'ios-list-box-outline'} size={30} color={'#2c3e50'}  />
           </TouchableHighlight>
           <Icon name={'ios-chatboxes-outline'} size={30} color={'#2c3e50'}  />
-          <Icon name={'ios-add-circle'} size={40} color={'#f39c12'}/>
-          <Icon name={'ios-notifications-outline'} size={30} color={'#2c3e50'}/>
-          <TouchableHighlight  onPress={this.onButtonPress.bind(this)} >
-          <Icon name={'ios-person-outline'} size={30} color={'#2c3e50'}/>
+          <TouchableHighlight onPress={this.onButtonPressQuestionForm.bind(this)} >
+            <Icon name={'ios-add-circle'} size={40} color={'#f39c12'}/>
+          </TouchableHighlight>
+          <TouchableHighlight onPress={this.onButtonPress.bind(this)}>
+            <Icon name={'ios-notifications-outline'} size={30} color={'#2c3e50'}/>
+          </TouchableHighlight>
+          <TouchableHighlight onPress={this.onButtonPressProfile.bind(this)}>
+            <Icon name={'ios-person-outline'} size={30} color={'#2c3e50'}/>
           </TouchableHighlight>
         </View>
       </View>
@@ -182,7 +199,7 @@ const styles = StyleSheet.create({
     flex:1,
   },
   bodyQuestion: {
-    height: 200,
+    height: 190,
     alignSelf: 'stretch',
     backgroundColor: '#FEFEFE',
     marginTop:10,
@@ -191,6 +208,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 15,
+  },
+  bodyQuestionHeaderCategory: {
+    fontSize: 12,
   },
   bodyQuestionHeader: {
     flex:1,
@@ -211,8 +231,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  bodyQuestionheaderTitle: {
-    fontSize: 13,
+  bodyQuestionHeaderTimeText: {
+    fontSize: 12,
     paddingRight: 5,
   },
   bodyQuestionContent: {

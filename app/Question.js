@@ -10,7 +10,8 @@ import {
   ScrollView,
   Picker,
   Item,
-  TextInput
+  TextInput,
+  Image
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -35,11 +36,11 @@ class Question extends Component {
         }
 
         fetchQuestions(){
-            fetch('http://172.16.102.17/api/v1/questions/'+global.questionId)
+            fetch('http://'+global.ipv4+'/api/v1/questions/'+global.questionId)
                 .then((response) => response.json())
                 .then((response) => {
                     this.setState({
-                        questionDataSource: this.state.questionDataSource.cloneWithRows([response[0]])
+                        questionDataSource: this.state.questionDataSource.cloneWithRows([xhr.response[0]])
                     });
                     this.setState({
                       answerDataSource: this.state.answerDataSource.cloneWithRows(response[0].all_answers_with_user)
@@ -120,6 +121,18 @@ class Question extends Component {
    });
  }
 
+ onButtonPressIndex(){
+   global.user=null;
+   this.props.navigator.push({
+     id: 'Home'
+   });
+ }
+ onButtonPressQuestionForm(){
+   global.user=null;
+   this.props.navigator.push({
+     id: 'QuestionForm'
+   });
+ }
 
 testEEE(){
   console.log(this.state.questionDataSource.all_answers_with_user);
@@ -134,13 +147,11 @@ storeAnswer(){
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Icon name={'md-search'} size={40} color={'white'}  />
-          <Text style={styles.headerTitle}>
-            KOLEGU
-          </Text>
-          <Icon name={'md-list'} size={40} color={'white'}/>
-        </View >
+          <View style={styles.header}>
+            <Icon style={styles.headerIcons} name={'md-search'} size={30} color={'white'}  />
+            <Image style={styles.logo} source={require('../public/img/moblogo.png')}/>
+            <Icon style={styles.headerIcons} name={'md-list'} size={30} color={'white'}/>
+          </View >
         <View style={styles.body}>
           <ListView   //Question
           style={styles.bodyScroll}
@@ -177,13 +188,17 @@ storeAnswer(){
 
         </View>
 
-        <View style={styles.footer}>
-          <Icon name={'ios-list-box-outline'} size={40} color={'#2c3e50'}  />
-          <Icon name={'ios-chatboxes-outline'} size={40} color={'#2c3e50'}  />
-          <Icon name={'ios-add-circle'} size={50} color={'#f39c12'}/>
-          <Icon name={'ios-notifications-outline'} size={40} color={'#2c3e50'}/>
+        <View elevation={10} style={styles.footer}>
+          <TouchableHighlight onPress={this.onButtonPressIndex.bind(this)} >
+            <Icon name={'ios-list-box-outline'} size={30} color={'#2c3e50'}  />
+          </TouchableHighlight>
+          <Icon name={'ios-chatboxes-outline'} size={30} color={'#2c3e50'}  />
+          <TouchableHighlight  onPress={this.onButtonPressQuestionForm.bind(this)} >
+            <Icon name={'ios-add-circle'} size={40} color={'#f39c12'}/>
+          </TouchableHighlight>
+          <Icon name={'ios-notifications-outline'} size={30} color={'#2c3e50'}/>
           <TouchableHighlight  onPress={this.onButtonPress.bind(this)} >
-            <Icon name={'ios-person-outline'} size={40} color={'#2c3e50'}/>
+          <Icon name={'ios-person-outline'} size={30} color={'#2c3e50'}/>
           </TouchableHighlight>
         </View>
       </View>
@@ -201,16 +216,19 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#f39c12',
+  },
+  headerIcons: {
+      padding: 15,
   },
   headerTitle: {
     fontSize: 20,
     color: 'white',
   },
   body: {
-    flex: 7,
+    flex: 10,
     backgroundColor: '#ecf0f1',
   },
   bodyScroll: {

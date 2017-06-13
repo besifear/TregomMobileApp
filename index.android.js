@@ -18,8 +18,10 @@ import Icon from 'react-native-vector-icons/Ionicons';
 var Login = require ('./app/Login');
 var Home = require ('./app/Home');
 var Question = require ('./app/Question');
+var QuestionForm = require ('./app/QuestionForm');
+var Profile = require ('./app/Profile');
 
-global.ipv4='172.16.102.17';
+global.ipv4='172.16.0.166';
 
 export default class tregomshqip extends Component {
   render() {
@@ -43,6 +45,10 @@ export default class tregomshqip extends Component {
         return(<Home navigator={navigator} title="Home"/>);
       case 'Question' :
           return(<Question navigator={navigator} title="Question"/>);
+      case 'QuestionForm' :
+          return(<QuestionForm navigator={navigator} title="QuestionForm"/>);
+      case 'Profile' :
+          return(<Profile navigator={navigator} title="Profile"/>);
     }
   }
 }
