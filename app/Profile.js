@@ -15,11 +15,32 @@ import {
   Dimensions
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
 // import ScrollableTabView, {DefaultTabBar, } from 'react-native-scrollable-tab-view';
+
+const FirstRoute = () => <View style={[ styles.container, { backgroundColor: 'gray' } ]} />;
+const SecondRoute = () => <View style={[ styles.container, { backgroundColor: '#ffffff' } ]} />;
 
 var start = Date.now();
 
-class QuestionForm extends Component {
+class Profile extends Component {
+
+    state = {
+      index: 0,
+      routes: [
+        { key: '1', title: 'First' },
+        { key: '2', title: 'Second' },
+      ],
+    };
+
+    _handleChangeTab = index => this.setState({ index });
+
+    _renderHeader = props => <TabBar {...props} />;
+
+    _renderScene = SceneMap({
+      '1': FirstRoute,
+      '2': SecondRoute,
+    });
 
   constructor(){
     super();
@@ -29,6 +50,11 @@ class QuestionForm extends Component {
       content: "",
       category: "",
       error: "",
+      index: 0,
+      routes: [
+        { key: '1', title: 'Asked' },
+        { key: '2', title: 'Answered' },
+      ],
     }
   }
 
@@ -75,7 +101,13 @@ class QuestionForm extends Component {
                 </View>
             </Image>
             <View style={styles.bodyContent}>
-
+                <TabViewAnimated
+                  style={styles.tabs}
+                  navigationState={this.state}
+                  renderScene={this._renderScene}
+                  renderHeader={this._renderHeader}
+                  onRequestChangeTab={this._handleChangeTab}
+                />
             </View>
 
 
@@ -103,6 +135,9 @@ class QuestionForm extends Component {
 }
 
 const styles = StyleSheet.create({
+    tabs: {
+      flex: 1,
+    },
     bodyQuestion: {
       flex: 1,
       alignSelf: 'stretch',
@@ -209,4 +244,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = QuestionForm;
+module.exports = Profile;
