@@ -20,8 +20,8 @@ class Login2 extends Component {
     super();
 
     this.state = {
-      username: "Ardit",
-      password: "123456",
+      username: "",
+      password: "",
       error: "",
       authenticationToken: "",
       isLoggedIn: false,
@@ -43,10 +43,10 @@ class Login2 extends Component {
         })
         .then((response) => response.json())
         .then((response) => {
-            var authToken = response.token;
-            this.setState({authenticationToken: authToken});
-            this.storeValueInAsyncStorage('@TregomAuthenticate:key', authToken);
-            this.fetchUserInfo(authToken);
+            global.authToken = response.token;
+            this.setState({authenticationToken: global.authToken});
+            this.storeValueInAsyncStorage('@TregomAuthenticate:key', global.authToken);
+            this.fetchUserInfo(global.authToken);
         }).catch((error)=>{console.log(error)});
     }
 

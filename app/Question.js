@@ -33,6 +33,12 @@ class Question extends Component {
         componentDidMount(){
 
             this.fetchQuestions();
+            console.log('global.user = ');
+            console.log(global.user);
+            console.log('authToken = ');
+            console.log(global.authToken);
+            console.log('questionId = ');
+            console.log(global.questionId);
         }
 
         fetchQuestions(){
@@ -140,6 +146,8 @@ testEEE(){
 
 storeAnswer(){
   console.log('stored answer!');
+  console.log(global.user);
+  console.log(global.authToken);
 }
 
 
@@ -147,11 +155,21 @@ storeAnswer(){
   render() {
     return (
       <View style={styles.container}>
+<<<<<<< HEAD
           <View style={styles.header}>
             <Icon style={styles.headerIcons} name={'md-search'} size={30} color={'white'}  />
             <Image style={styles.logo} source={require('../public/img/moblogo.png')}/>
             <Icon style={styles.headerIcons} name={'md-list'} size={30} color={'white'}/>
           </View >
+=======
+        <View style={styles.header}>
+          <Icon name={'md-search'} size={40} color={'white'}  />
+          <Text style={styles.headerTitle}>
+            TREGOM
+          </Text>
+          <Icon name={'md-list'} size={40} color={'white'}/>
+        </View >
+>>>>>>> 69d1ce87c6400588bb11d4b7a814fbdc84eafaff
         <View style={styles.body}>
           <ListView   //Question
           style={styles.bodyScroll}
